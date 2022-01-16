@@ -10,6 +10,8 @@ import { Input } from './components/Input';
 import { Container } from './components/Container';
 import { User } from './components/state/User';
 import { Counter } from './components/state/Counter';
+import {ThemeContextProvider} from './components/context/themeContext'
+import {Box} from './components/context/Box'
 
 function App() {
   const personName = {
@@ -32,6 +34,9 @@ function App() {
   ]
   return (
     <div className="App">
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
       <Greet name='Di Qian' messageCount={20} isLoggedIn={false}/>
       <Greet name='Di Qian' isLoggedIn={true}/>
       <Person name={personName}/>
